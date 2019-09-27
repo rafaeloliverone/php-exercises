@@ -2,28 +2,15 @@
 
 function roatLeft($array, $rotation){
 
-    foreach($array as $number){
-        // $index = array_keys($array, $number);
-        // echo 'qqqqq';
-        // print_r($index);
+        for($i = 0; $i < $rotation; $i++){
+            $element = array_shift($array);
+            array_push($array, $element);
 
-
-
-        while ($key = array_search($number, $array) != false){
-            print($key);
-            // unset($duplicate[]);
+            print_r($array);
+       
         }
-    
-    }
-
-
 }
 
- roatLeft([1, 2, 3, 4, 5, 4,5],4);
-
-// $array = [1,3,6,7,8];
-// $array[2] = $array[4];
-
-// echo $array[-1];
+ roatLeft([41, 73, 89, 7, 10, 1, 59, 58, 84, 77, 77, 97, 58, 1, 86, 58, 26, 10, 86, 51],10);
 
 ?>

@@ -23,6 +23,7 @@ function pairOfSock($group){
 
 
 function printSock($collection){
+
     $array = pairOfSock($collection);
     $sum = [];
 
