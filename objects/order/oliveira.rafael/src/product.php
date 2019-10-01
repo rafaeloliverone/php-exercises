@@ -2,9 +2,9 @@
 
 class Product{
 
-  public $id;
-  public $name;
-  public $price;
+  private $id;
+  private $name;
+  private $price;
 
   public function __construct($id, string $name, float $price ){
     $this->id = $id;
