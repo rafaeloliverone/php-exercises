@@ -1,5 +1,5 @@
 <?php
-require_once('../config.php');
+require_once(__DIR__.'/../config.php');
 
 class Handler{
 
@@ -14,16 +14,31 @@ class Handler{
     
     }
 
+    public function loadDatabase($sql){
+        try {
+            $this->connection->exec($sql);
+            return $this->connection->lastInsertId();
+        } catch(PDOExecption $e) { 
+            $this->connection->rollback(); 
+            print "Error!: " . $e->getMessage(); 
+            return null;
+        }
+    }
+
     public function validate($login, $password){
-        $sql = "SELECT * FROM host  WHERE name = ${login} and address = ${$password}";
-        if ( $sql > 0 ) {
+        $sql = "SELECT * FROM users WHERE username = '${login}' and password = '${password}' ";
+        $result = $this->connection->query($sql);
+
+        if ( $result->rowCount() == 1 ) {
             return True;
+        } else {
+            return False;
         }
     }
 
     public function create($name, $address) {
 
-        $sql = "INSERT INTO host (name, address) VALUES ('${name}', '${address}');";
+        $sql = "INSERT INTO host (name, address) VALUES ('${name}', '${address}')" ;
         
         try {
             $this->connection->exec($sql);
@@ -32,7 +47,8 @@ class Handler{
             $this->connection->rollback(); 
             print "Error!: " . $e->getMessage(); 
             return null;
-        } 
+        }   
+
     }
 
     /**

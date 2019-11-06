@@ -13,7 +13,7 @@
   <body>
 
     <div class="container mt-4">
-        <form action="validar.php" method="POST" name="formlogin">
+        <form action="valid.php" method="POST" name="formlogin">
             <div class="form-group">
                 <label >Email</label>
                 <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" name="email">
