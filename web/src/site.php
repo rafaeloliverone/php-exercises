@@ -12,21 +12,7 @@
   </head>
   <body>
 
-    <div class="container mt-4">
-        <form action="validar.php" method="POST" name="formlogin">
-            <div class="form-group">
-                <label >Email</label>
-                <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-            </div>
-           
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    <div>
-
+    <p> BEM VINDO AO SISTEMA </p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

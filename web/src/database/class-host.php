@@ -14,6 +14,13 @@ class Handler{
     
     }
 
+    public function validate($login, $password){
+        $sql = "SELECT * FROM host  WHERE name = ${login} and address = ${$password}";
+        if ( $sql > 0 ) {
+            return True;
+        }
+    }
+
     public function create($name, $address) {
 
         $sql = "INSERT INTO host (name, address) VALUES ('${name}', '${address}');";
