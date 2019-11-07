@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS computer;
+CREATE DATABASE computer;
 USE computer;
 
 CREATE TABLE `host` (
@@ -24,3 +26,5 @@ INSERT INTO `users`
   (`username`, `password`)
 VALUES
   ('rafael', '123');
+
+
