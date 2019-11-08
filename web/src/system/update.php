@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/../database/class-host.php');
+require_once(__DIR__ . '/../database/class-host.php');
 
 session_start();
 $handler = new Handler();
@@ -50,11 +50,13 @@ $handler = new Handler();
         <form action="update_form.php" method="POST" class="mt-3">
 
             <div class="form-row">
-
-                <div class="col-7">
+                <div class="col-1">
+                    <input type="text" class="form-control" placeholder="Id" name="id" value="<?php echo $_GET['id']; ?>" readonly>
+                </div>
+                <div class="col-5">
                     <input type="text" class="form-control" placeholder="Name" name="name" value="<?php echo $object['name']; ?>">
                 </div>
-                <div class="col">
+                <div class="col-5">
                     <input type="text" class="form-control" placeholder="Address" name="address" value="<?php echo $object['address']; ?>">
                 </div>
 

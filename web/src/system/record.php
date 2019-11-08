@@ -15,3 +15,4 @@ if ($handler->readByNameAddress($name, $address) != null ){
     header('location:list.php');
 }
 
+?>
