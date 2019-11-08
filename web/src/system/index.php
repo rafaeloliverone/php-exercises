@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['logged'])) {
+  header('location:list.php');
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -12,22 +22,34 @@
   <title>Home</title>
 </head>
 
-<body>
+<body style="height:100vh;">
 
   <div class="container mt-4">
-    <form action="valid.php" method="POST" name="formlogin">
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+    <div class="row" style="height:80vh;">
+      <div class="col-lg-12 d-flex justify-content-center align-items-center">
+
+        <div class="card">
+          <div class="card-body ">
+
+            <form action="/../auth/valid.php" method="POST" name="formlogin">
+              <div class="form-group">
+                <label> Username </label>
+                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter username" name="login">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Sign in </button>
+            </form>
+
+            <div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <div>
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

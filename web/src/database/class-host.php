@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/../config.php');
+require_once('config.php');
 
 class Handler{
 
@@ -87,7 +87,8 @@ class Handler{
         if ($result) {
         return $result;
         } else {
-        return $this->create($name, $address);
+        $this->create($name, $address);
+        return True;
         }
     }
 

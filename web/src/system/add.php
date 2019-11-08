@@ -14,20 +14,42 @@
 
 <body>
     <div class="container mt-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
 
-        <form action="record.php" method="POST">
-            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="list.php">List <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="add.php">Add</a>
+                    </li>
+                </ul>
+
+                <span class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </span>
+
+            </div>
+        </nav>
+
+        <form action="record.php" method="POST" class="mt-3">
+
             <div class="form-row">
 
                 <div class="col-7">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control" placeholder="Name" name="name">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Address">
+                    <input type="text" class="form-control" placeholder="Address" name="address">
                 </div>
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mb-2">Add</button>
                 </div>
 
             </div>
