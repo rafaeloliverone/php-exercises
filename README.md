@@ -2,7 +2,7 @@
 
 Para rodar a pasta web: 
 
-  docker-compose up -d \n 
+  docker-compose up -d <br/>
   docker-compose exec mysql bash
   mysql -u root -p
   Enter password: abc123
