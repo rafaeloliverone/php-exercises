@@ -9,3 +9,4 @@ $handler->update($_POST['name'], $_POST['address'], $_POST['id']);
 header('location:list.php');
 
 ?>
+
