@@ -15,10 +15,24 @@ class VacanciesController extends Controller
      */
     public function index(Request $request)
     {
-        $jobs = DB::table('vacancies')->paginate(5);
-        // $jobs->withPath('custom/url');
-        // dd($request->per_page);
-        return view('vacancies.index', compact('jobs'));
+        $per_page = $request->per_page ?? 5;
+        $search = $request->search ?? '';
+
+        $jobs = Vacancies::where('name_company', 'LIKE', '%' . $search . '%')
+            ->orWhere('linkedin', 'LIKE', '%' . $search . '%')
+            ->paginate($per_page);
+
+        // $jobs = DB::table('vacancies')->paginate($request->per_page);
+        
+        if ($per_page){
+            $jobs->appends(['per_page' => $per_page]);
+        }
+
+        if ($search){
+            $jobs->appends(['search' => $search] );
+        }
+
+        return view('vacancies.index', compact('jobs','per_page','search') );
     }
 
     /**

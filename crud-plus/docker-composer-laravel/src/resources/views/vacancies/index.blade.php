@@ -12,8 +12,9 @@
 </div><br />
 @endif
 
+<input class="form-control form-control-lg md-3" name="search" type="text" placeholder="">
 
-<table class="table">
+<table class="table mt-4">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -49,11 +50,25 @@
 </table>
 
 
-<div class="d-flex justify-content-start">
+<div class="d-flex justify-content-around">
   
   <a href="{{ route('vacancies.create') }}" class="btn btn-primary mr-4" role="button">Add vacancy</a>
   
   {{ $jobs->links() }}
+
+
+  <form action="{{ route('vacancies.index') }}">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control" name="per_page" id="exampleFormControlSelect1" onchange="this.form.submit()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+      </select>
+    </div>
+  </form>
 
 </div>
 
