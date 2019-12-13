@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vacancies;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -12,9 +13,11 @@ class VacanciesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $jobs = Vacancies::all();
+        $jobs = DB::table('vacancies')->paginate(5);
+        // $jobs->withPath('custom/url');
+        // dd($request->per_page);
         return view('vacancies.index', compact('jobs'));
     }
 
@@ -109,3 +112,6 @@ class VacanciesController extends Controller
         return redirect(route('vacancies.index'))->with('sucess', 'Vacancy is successfully deleted');
     }
 }
+
+
+

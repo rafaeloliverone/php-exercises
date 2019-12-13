@@ -48,5 +48,13 @@
   </tbody>
 </table>
 
-<a href="{{ route('vacancies.create') }}" class="btn btn-primary" role="button">Add vacancy</a>
+
+<div class="d-flex justify-content-start">
+  
+  <a href="{{ route('vacancies.create') }}" class="btn btn-primary mr-4" role="button">Add vacancy</a>
+  
+  {{ $jobs->links() }}
+
+</div>
+
 @endsection
